@@ -54,10 +54,9 @@ export default {
           facingMode: this.front ? 'user' : 'environment'
         }
       }
-      this.stream = await window.navigator.mediaDevices.getUserMedia({
-        audio: true,
-        video: true
-      })
+      this.stream = await window.navigator.mediaDevices.getUserMedia(
+        constraints
+      )
     }
   }
 }
