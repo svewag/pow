@@ -1,8 +1,21 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <nuxt-link to="battery"><v-btn large>Battery</v-btn></nuxt-link>
-      <nuxt-link to="bluetooth"><v-btn large>Bluetooth</v-btn></nuxt-link>
+      <v-container v-for="item in items" :key="item">
+        <nuxt-link :to="item"
+          ><v-btn large>{{ item }}</v-btn></nuxt-link
+        >
+      </v-container>
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: ['battery', 'bluetooth', 'browser']
+    }
+  }
+}
+</script>
