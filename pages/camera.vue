@@ -10,44 +10,47 @@
       autoplay
       muted
       controls
+      playsinline="true"
     />
+
+    <a v-show="image" ref="download" download="photo.png">download</a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Camera',
-  data () {
+  data() {
     return {
       front: false,
-      stream: null
+      stream: null,
+      image: null
     }
   },
   watch: {
-    stream () {
+    stream() {
       this.$refs.video.srcObject = this.stream
+    },
+    image() {
+      this.$refs.download.href = this.image
     }
   },
   methods: {
-    flip () {
+    flip() {
       this.front = !this.front
       this.getVideo()
     },
-    takePhoto () {
+    takePhoto() {
       const canvas = document.createElement('canvas')
       canvas.setAttribute('height', 1200)
       canvas.setAttribute('width', 1200)
       canvas
         .getContext('2d')
         .drawImage(this.$refs.video, 0, 0, 1200, 1200, 0, 0, 1200, 1200)
-      const img = canvas.toDataURL('image/png')
 
-      const saveImg = document.createElement('a')
-      saveImg.href = img
-      saveImg.download = 'imagename.png'
-      saveImg.click()
+      this.image = canvas.toDataURL('image/png')
     },
-    async getVideo () {
+    async getVideo() {
       const constraints = {
         audio: true,
         video: {
@@ -64,7 +67,6 @@ export default {
 
 <style scoped>
 video {
-  width: 1000px;
-  height: 560px;
+  width: 100%;
 }
 </style>
