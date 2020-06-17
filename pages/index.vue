@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      items: ['battery', 'bluetooth', 'browser', 'camera']
+      items: ['battery', 'bluetooth', 'browser', 'camera', 'credentials']
     }
   }
 }
