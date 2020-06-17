@@ -22,6 +22,7 @@ export default {
         'credentials',
         'css',
         'device',
+        'geolocation',
         'network'
       ]
     }
