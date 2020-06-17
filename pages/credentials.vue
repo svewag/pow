@@ -43,8 +43,7 @@ export default {
           id: this.user,
           password: this.password
         })
-        console.log(credential)
-        navigator.credentials.store(credential)
+        await navigator.credentials.store(credential)
       }
     },
     logout() {
@@ -54,7 +53,6 @@ export default {
     async access() {
       const credential = await navigator.credentials.get({ password: true })
       if (credential) {
-        console.log(credential)
         this.user = credential.id
         this.password = credential.password
         this.$nextTick(() => this.login())

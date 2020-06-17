@@ -14,7 +14,16 @@
 export default {
   data() {
     return {
-      items: ['battery', 'bluetooth', 'browser', 'camera', 'credentials']
+      items: [
+        'battery',
+        'bluetooth',
+        'browser',
+        'camera',
+        'credentials',
+        'css',
+        'device',
+        'network'
+      ]
     }
   }
 }
