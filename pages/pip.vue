@@ -34,3 +34,10 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+video {
+  max-width: 800;
+  width: 100%;
+}
+</style>
