@@ -23,7 +23,8 @@ export default {
         'css',
         'device',
         'geolocation',
-        'network'
+        'network',
+        'pip'
       ]
     }
   }
