@@ -66,8 +66,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 video {
+  max-height: 500px;
   width: 100%;
 }
 </style>
