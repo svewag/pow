@@ -1,29 +1,32 @@
 <template>
-  <v-simple-table>
-    <template v-slot:default>
-      <tbody>
-        <tr>
-          <td>Battery Level</td>
-          <td>{{ level }}</td>
-        </tr>
+  <div>
+    <my-header>{{ $options.name }}</my-header>
+    <v-simple-table>
+      <template v-slot:default>
+        <tbody>
+          <tr>
+            <td>Battery Level</td>
+            <td>{{ level * 100 }} %</td>
+          </tr>
 
-        <tr>
-          <td>is charging</td>
-          <td>{{ charging }}</td>
-        </tr>
+          <tr>
+            <td>is charging</td>
+            <td>{{ charging }}</td>
+          </tr>
 
-        <tr>
-          <td>chargingTime</td>
-          <td>{{ chargingTime }}</td>
-        </tr>
+          <tr>
+            <td>chargingTime</td>
+            <td>{{ chargingTime }}</td>
+          </tr>
 
-        <tr>
-          <td>dischargingTime</td>
-          <td>{{ dischargingTime }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
+          <tr>
+            <td>dischargingTime</td>
+            <td>{{ dischargingTime }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
+  </div>
 </template>
 
 <script>

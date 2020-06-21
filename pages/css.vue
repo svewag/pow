@@ -1,30 +1,33 @@
 <template>
-  <section>
-    <div class="color-scheme">
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"
-        >prefers-color-scheme</a
-      >
-    </div>
-    <div class="reduced-motion">
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
-        >prefers-reduced-motion</a
-      >
-    </div>
-    <div class="contrast">
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast"
-        >prefers-contrast (not yet supported)</a
-      >
-    </div>
-    <div class="reduced-transparency">
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency"
-        >prefers-reduced-transparency (not yet supported)</a
-      >
-    </div>
-  </section>
+  <div>
+    <my-header>{{ $options.name }}</my-header>
+    <section>
+      <div class="color-scheme">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"
+          >prefers-color-scheme</a
+        >
+      </div>
+      <div class="reduced-motion">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+          >prefers-reduced-motion</a
+        >
+      </div>
+      <div class="contrast">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast"
+          >prefers-contrast (not yet supported)</a
+        >
+      </div>
+      <div class="reduced-transparency">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency"
+          >prefers-reduced-transparency (not yet supported)</a
+        >
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>

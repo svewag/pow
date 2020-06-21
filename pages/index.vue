@@ -1,13 +1,9 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <v-container v-for="item in items" :key="item">
-        <nuxt-link :to="item">
-          <v-btn large>{{ item }}</v-btn>
-        </nuxt-link>
-      </v-container>
-    </v-flex>
-  </v-layout>
+  <v-flex>
+    <div v-for="item in items" :key="item" class="mx-2 my-2 float-left">
+      <v-btn :to="item" nuxt large>{{ item }}</v-btn>
+    </div>
+  </v-flex>
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header>{{ $options.name }}</my-header>
     <v-btn large @click="start">start watch</v-btn>
     <v-btn large @click="end">end watch</v-btn>
     <div>{{ coords }}</div>

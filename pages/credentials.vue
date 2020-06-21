@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header>{{ $options.name }}</my-header>
     <form v-if="!loggedin" id="login">
       <v-text-field
         v-model="user"

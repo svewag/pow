@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header>{{ $options.name }}</my-header>
     <v-btn @click="getVideo">open camera</v-btn>
     <v-btn @click="flip">flip camera</v-btn>
     <v-btn @click="takePhoto">take a photo</v-btn>

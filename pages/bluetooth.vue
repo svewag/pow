@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header>{{ $options.name }}</my-header>
     <v-btn large @click="connect">scan</v-btn>
     <v-simple-table v-if="device">
       <template v-slot:default>

@@ -1,51 +1,54 @@
 <template>
-  <v-simple-table>
-    <template v-slot:default>
-      <tbody>
-        <tr>
-          <td>Cookie enabled?</td>
-          <td>{{ navigator.cookieEnabled }}</td>
-        </tr>
+  <div>
+    <my-header>{{ $options.name }}</my-header>
+    <v-simple-table>
+      <template v-slot:default>
+        <tbody>
+          <tr>
+            <td>Cookie enabled?</td>
+            <td>{{ navigator.cookieEnabled }}</td>
+          </tr>
 
-        <tr>
-          <td>App-Version</td>
-          <td>{{ navigator.appVersion }}</td>
-        </tr>
+          <tr>
+            <td>App-Version</td>
+            <td>{{ navigator.appVersion }}</td>
+          </tr>
 
-        <tr>
-          <td>Platform</td>
-          <td>{{ navigator.platform }}</td>
-        </tr>
+          <tr>
+            <td>Platform</td>
+            <td>{{ navigator.platform }}</td>
+          </tr>
 
-        <tr>
-          <td>Vendor</td>
-          <td>{{ vendor }}</td>
-        </tr>
-      </tbody></template
-    >
+          <tr>
+            <td>Vendor</td>
+            <td>{{ vendor }}</td>
+          </tr>
+        </tbody></template
+      >
 
-    <script>
-      export default {
-        name: 'Browser',
-        data() {
-          return {
-            navigator: window ? window.navigator : null
-          }
-        },
-        computed: {
-          vendor() {
-            if (this.navigator) {
-              return [this.navigator.vendor, this.navigator.vendorSub]
-                .filter(Boolean)
-                .join(', ')
+      <script>
+        export default {
+          name: 'Browser',
+          data() {
+            return {
+              navigator: window ? window.navigator : null
             }
-            return ''
+          },
+          computed: {
+            vendor() {
+              if (this.navigator) {
+                return [this.navigator.vendor, this.navigator.vendorSub]
+                  .filter(Boolean)
+                  .join(', ')
+              }
+              return ''
+            }
           }
         }
-      }
-    </script>
-  </v-simple-table></template
->
+      </script>
+    </v-simple-table>
+  </div>
+</template>
 
 <script>
 export default {

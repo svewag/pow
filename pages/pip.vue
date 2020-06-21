@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header>{{ $options.name }}</my-header>
     <unsupported v-show="!hasSupport" />
     <video
       ref="video"
@@ -17,11 +18,27 @@
 
 <script>
 export default {
-  name: 'Pip',
+  name: 'PictureInPicture',
   data() {
     return {
-      hasSupport: window.document.pictureInPictureEnabled
+      hasSupport: window.document.pictureInPictureEnabled,
+      pipVideo: null
     }
+  },
+  mounted() {
+    const video = this.$refs.video
+
+    video.addEventListener('enterpictureinpicture', function(event) {
+      console.log('Entered PiP')
+      const pipWindow = event.pictureInPictureWindow
+      console.log(
+        `Window size -  \n Width: ${pipWindow.width} \n Height: ${pipWindow.height}`
+      )
+    })
+
+    video.addEventListener('leavepictureinpicture', function(event) {
+      console.log('Left PiP')
+    })
   },
   methods: {
     toggle() {
@@ -37,7 +54,7 @@ export default {
 
 <style lang="css" scoped>
 video {
-  max-width: 800;
+  max-width: 800px;
   width: 100%;
 }
 </style>
