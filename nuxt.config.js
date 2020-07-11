@@ -49,6 +49,22 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/pwa'],
+  pwa: {
+    manifest: {
+      screenshots: [
+        {
+          src: 'screenshot1.jpg',
+          sizes: '1280x720',
+          type: 'image/jpg',
+        },
+        {
+          src: 'screenshot2.jpg',
+          sizes: '1280x720',
+          type: 'image/jpg',
+        },
+      ],
+    },
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
