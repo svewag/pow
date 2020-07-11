@@ -31,7 +31,7 @@
           name: 'Browser',
           data() {
             return {
-              navigator: window ? window.navigator : null
+              navigator: window ? window.navigator : null,
             }
           },
           computed: {
@@ -42,8 +42,8 @@
                   .join(', ')
               }
               return ''
-            }
-          }
+            },
+          },
         }
       </script>
     </v-simple-table>
@@ -55,7 +55,7 @@ export default {
   name: 'Browser',
   data() {
     return {
-      navigator: window ? window.navigator : null
+      navigator: window ? window.navigator : null,
     }
   },
   computed: {
@@ -66,7 +66,7 @@ export default {
           .join(', ')
       }
       return ''
-    }
-  }
+    },
+  },
 }
 </script>

@@ -14,7 +14,7 @@ export default {
     return {
       latitude: null,
       longitude: null,
-      watchID: null
+      watchID: null,
     }
   },
   computed: {
@@ -24,7 +24,7 @@ export default {
       }
 
       return ''
-    }
+    },
   },
   methods: {
     syncCoords(position) {
@@ -41,7 +41,7 @@ export default {
     },
     end() {
       navigator.geolocation.clearWatch(this.watchID)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -24,8 +24,8 @@ export default {
   name: 'Device',
   data() {
     return {
-      navigator: window.navigator
+      navigator: window.navigator,
     }
-  }
+  },
 }
 </script>

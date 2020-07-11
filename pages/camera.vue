@@ -25,7 +25,7 @@ export default {
     return {
       front: false,
       stream: null,
-      image: null
+      image: null,
     }
   },
   watch: {
@@ -34,7 +34,7 @@ export default {
     },
     image() {
       this.$refs.download.href = this.image
-    }
+    },
   },
   methods: {
     flip() {
@@ -55,14 +55,14 @@ export default {
       const constraints = {
         audio: true,
         video: {
-          facingMode: this.front ? 'user' : 'environment'
-        }
+          facingMode: this.front ? 'user' : 'environment',
+        },
       }
       this.stream = await window.navigator.mediaDevices.getUserMedia(
         constraints
       )
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,6 +1,7 @@
 <template>
   <div>
     <my-header>{{ $options.name }}</my-header>
+    <unsupported v-show="hasSupport" />
     <v-simple-table>
       <template v-slot:default>
         <tbody>
@@ -34,6 +35,7 @@ export default {
   name: 'Battery',
   data() {
     return {
+      hasSupport: 'getBattery' in navigator,
       chargingTime: null,
       dischargingTime: null,
       level: null,

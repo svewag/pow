@@ -1,6 +1,7 @@
 <template>
   <div>
     <my-header>{{ $options.name }}</my-header>
+    <unsupported v-show="!hasSupport" />
     <v-btn large @click="connect">scan</v-btn>
     <v-simple-table v-if="device">
       <template v-slot:default>
@@ -24,8 +25,9 @@ export default {
   name: 'Bluetooth',
   data() {
     return {
+      hasSupport: 'bluetooth' in navigator,
       device: null,
-      connected: false
+      connected: false,
     }
   },
   computed: {
@@ -39,16 +41,16 @@ export default {
       } else {
         return ''
       }
-    }
+    },
   },
   methods: {
     async connect() {
       this.device = await navigator.bluetooth.requestDevice({
-        acceptAllDevices: true
+        acceptAllDevices: true,
       })
       const server = await this.device.gatt.connect()
       this.connected = server.connected
-    }
-  }
+    },
+  },
 }
 </script>

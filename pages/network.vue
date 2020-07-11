@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       navigator: window.navigator,
-      online: navigator.onLine
+      online: navigator.onLine,
     }
   },
   mounted() {
@@ -79,6 +79,6 @@ export default {
 
     window.addEventListener('online', getOnlineStatus)
     window.addEventListener('offline', getOnlineStatus)
-  }
+  },
 }
 </script>

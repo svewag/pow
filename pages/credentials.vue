@@ -1,6 +1,7 @@
 <template>
   <div>
     <my-header>{{ $options.name }}</my-header>
+    <unsupported v-show="!hasSupport" />
     <form v-if="!loggedin" id="login">
       <v-text-field
         v-model="user"
@@ -31,9 +32,10 @@ export default {
   name: 'Credentials',
   data() {
     return {
+      hasSupport: 'credentials' in navigator,
       loggedin: false,
       user: '',
-      password: ''
+      password: '',
     }
   },
   methods: {
@@ -42,7 +44,7 @@ export default {
         this.loggedin = true
         const credential = new window.PasswordCredential({
           id: this.user,
-          password: this.password
+          password: this.password,
         })
         await navigator.credentials.store(credential)
       }
@@ -58,7 +60,7 @@ export default {
         this.password = credential.password
         this.$nextTick(() => this.login())
       }
-    }
-  }
+    },
+  },
 }
 </script>
