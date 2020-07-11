@@ -22,6 +22,7 @@ export default {
         'network',
         'pip',
         'mediaControls',
+        'badge',
       ],
     }
   },
