@@ -37,7 +37,7 @@ export default {
       chargingTime: null,
       dischargingTime: null,
       level: null,
-      charging: null
+      charging: null,
     }
   },
   async mounted() {
@@ -62,6 +62,6 @@ export default {
     battery.onlevelchange = () => {
       this.level = battery.level
     }
-  }
+  },
 }
 </script>

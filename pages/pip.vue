@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       hasSupport: window.document.pictureInPictureEnabled,
-      pipVideo: null
+      pipVideo: null,
     }
   },
   mounted() {
@@ -47,8 +47,8 @@ export default {
       } else {
         document.exitPictureInPicture()
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

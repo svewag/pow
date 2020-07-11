@@ -20,9 +20,10 @@ export default {
         'device',
         'geolocation',
         'network',
-        'pip'
-      ]
+        'pip',
+        'mediaControls',
+      ],
     }
-  }
+  },
 }
 </script>
