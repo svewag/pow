@@ -17,7 +17,7 @@
       on the media.
     </p>
     <p>
-      When you are on mobile, have a look at your lock screen to finde the media
+      When you are on mobile, have a look at your lock screen to find the media
       controls.
     </p>
   </div>
