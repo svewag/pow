@@ -1,7 +1,7 @@
 <template>
   <div>
     <my-header>{{ $options.name }}</my-header>
-    <unsupported v-show="hasSupport" />
+    <unsupported v-show="!hasSupport" />
     <v-simple-table>
       <template v-slot:default>
         <tbody>
