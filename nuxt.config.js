@@ -64,6 +64,15 @@ export default {
   },
   pwa: {
     manifest: {
+      shortcuts: [
+        {
+          name: 'Camera',
+          short_name: 'Camera',
+          description: 'Open the camera page',
+          url: '/camera',
+          icons: [{ src: '/camera-icon.png', sizes: '192x192' }],
+        },
+      ],
       screenshots: [
         {
           src: 'screenshot1.jpg',
