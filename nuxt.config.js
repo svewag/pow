@@ -2,6 +2,8 @@ import path from 'path'
 import fs from 'fs'
 import colors from 'vuetify/es5/util/colors'
 
+const isDev = process.env.NODE_ENV !== 'production'
+
 export default {
   mode: 'spa',
   server: {
@@ -48,7 +50,18 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/onesignal', '@nuxtjs/pwa'],
+  oneSignal: {
+    init: {
+      appId: isDev
+        ? '8db14c5d-5398-4774-9b44-58caeff70b23'
+        : '62cb81a8-8f9e-4788-b414-99bb6aa2778f',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true,
+      },
+    },
+  },
   pwa: {
     manifest: {
       screenshots: [

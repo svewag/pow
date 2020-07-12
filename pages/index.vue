@@ -23,8 +23,17 @@ export default {
         'pip',
         'mediaControls',
         'badge',
+        'push',
       ],
     }
+  },
+  mounted() {
+    window.$OneSignal.push([
+      'addListenerForNotificationOpened',
+      (data) => {
+        console.log('Received NotificationOpened:', data)
+      },
+    ])
   },
 }
 </script>
